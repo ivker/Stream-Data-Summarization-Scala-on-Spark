@@ -1,0 +1,105 @@
+#HS
+/home/nbu/spark-1.2.0/bin/spark-submit \
+--master yarn-cluster \
+--class HierarchyStream.HS_Dis \
+--driver-memory 6g \
+--num-executors 20 \
+--executor-memory 1g \
+--executor-cores 1 \
+--jars /root/zfx/jar/Common.jar,/root/zfx/jar/Common.Scala.jar \
+/root/zfx/jar/HS.jar \
+1 \
+100 \
+hdfs://hadoop201:9000/zfx/data/census/ \
+hdfs://hadoop201:9000/zfx/res/
+
+#SG
+/home/nbu/spark-1.2.0/bin/spark-submit \
+--master yarn-cluster \
+--class StreamGreedy.SG_Dis \
+--driver-memory 6g \
+--num-executors 60 \
+--executor-memory 1g \
+--executor-cores 1 \
+--jars /root/zfx/jar/Common.jar,/root/zfx/jar/Common.Scala.jar \
+/root/zfx/jar/SG.jar \
+1 \
+100 \
+hdfs://hadoop201:9000/zfx/data/census/ \
+hdfs://hadoop201:9000/zfx/res/
+
+#SS
+/home/nbu/spark-1.2.0/bin/spark-submit \
+--master yarn-cluster \
+--class SieveStream.SS_Dis \
+--driver-memory 6g \
+--num-executors 20 \
+--executor-memory 1g \
+--executor-cores 1 \
+--jars /root/zfx/jar/Common.jar,/root/zfx/jar/Common.Scala.jar \
+/root/zfx/jar/SS.jar \
+20 \
+100 \
+0.1 \
+1000 \
+hdfs://hadoop201:9000/zfx/data/census/ \
+hdfs://hadoop201:9000/zfx/res/
+
+#ST
+/home/nbu/spark-1.2.0/bin/spark-submit \
+--master yarn-cluster \
+--class STandardgreedy.ST_Dis \
+--driver-memory 6g \
+--num-executors 20 \
+--executor-memory 1g \
+--executor-cores 1 \
+--jars /root/zfx/jar/Common.jar,/root/zfx/jar/Common.Scala.jar \
+/root/zfx/jar/ST.jar \
+20 \
+100 \
+hdfs://hadoop201:9000/zfx/data/census/ \
+hdfs://hadoop201:9000/zfx/res/
+
+#RT
+/home/nbu/spark-1.2.0/bin/spark-submit \
+--master yarn-cluster \
+--class RandomTop.RT_Dis \
+--driver-memory 6g \
+--num-executors 20 \
+--executor-memory 1g \
+--executor-cores 1 \
+--jars /root/zfx/jar/Common.jar,/root/zfx/jar/Common.Scala.jar \
+/root/zfx/jar/RT.jar \
+20 \
+hdfs://hadoop201:9000/zfx/data/census/ \
+hdfs://hadoop201:9000/zfx/res/
+
+#GD
+/home/nbu/spark-1.2.0/bin/spark-submit \
+--master yarn-cluster \
+--class RandomTop.GD_Dis \
+--driver-memory 6g \
+--num-executors 20 \
+--executor-memory 1g \
+--executor-cores 1 \
+--jars /root/zfx/jar/Common.jar,/root/zfx/jar/Common.Scala.jar \
+/root/zfx/jar/GD.jar \
+20 \
+100 \
+hdfs://hadoop201:9000/zfx/data/census/ \
+hdfs://hadoop201:9000/zfx/res/
+
+#GD
+/home/nbu/spark-1.2.0/bin/spark-submit \
+--master yarn-cluster \
+--class GreeDi.GD_Dis \
+--driver-memory 6g \
+--num-executors 20 \
+--executor-memory 1g \
+--executor-cores 1 \
+--jars /root/zfx/jar/Common.jar,/root/zfx/jar/Common.Scala.jar \
+/root/zfx/jar/GD.jar \
+20 \
+20 \
+hdfs://hadoop201:9000/zfx/data/census/ \
+hdfs://hadoop201:9000/zfx/res/
