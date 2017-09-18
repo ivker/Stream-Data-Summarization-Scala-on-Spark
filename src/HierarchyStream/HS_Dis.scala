@@ -19,7 +19,7 @@ object HS_Dis {
    * param K:start with 1 /e.g 5
    * param B:input batch size,start with 1 /e.g 10
    * return (start,length):It's the index of circle ,start with 0 to K-1
-   * e.g (3,5) means: [3 2 1 0 (K-1) (K-2)]
+   * e.g (3,5,0) means: deal order is [3 2 1 0 (K-1) (K-2)] and traverse from layer 0
    */
   def GetLayerSize(batch: Int, K: Int, B: Int): (Int, Int, Int) = {
     var start = 0
